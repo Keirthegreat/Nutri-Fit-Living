@@ -1,0 +1,246 @@
+
+        /* Main Container */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', 'Montserrat', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Color scheme */
+        :root {
+            --primary-green: #4CAF50;
+            --secondary-green: #45a049;
+            --white: #fff;
+            --gray: #f4f4f4;
+        }
+
+        .main-container {
+            display: flex;
+            max-width: 1200px;
+            margin: 2rem auto;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        /* Sidebar Profile */
+        .sidebar {
+            flex: 1;
+            background-color: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            min-width: 250px;
+        }
+
+        .profile-picture-section img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+            border: 3px solid var(--primary-green);
+        }
+
+        .sidebar .username {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .sidebar .role {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .sidebar .social-links a {
+            display: inline-block;
+            margin: 0.5rem;
+            color: var(--primary-green);
+            font-size: 1.3rem;
+            transition: color 0.3s;
+        }
+
+        .sidebar .social-links a:hover {
+            color: var(--secondary-green);
+        }
+
+        /* Editable Social Links */
+        .social-edit {
+            display: none;
+            margin-top: 0.5rem;
+        }
+
+        .social-edit input {
+            width: 100%;
+            padding: 0.4rem;
+            font-size: 0.9rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 0.5rem;
+        }
+
+        .edit-social-btn, .edit-role-btn {
+            color: var(--primary-green);
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .edit-social-btn:hover, .edit-role-btn:hover {
+            color: var(--secondary-green);
+        }
+
+        /* Profile Form */
+        .profile-form {
+            flex: 2;
+            background-color: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            min-width: 300px;
+        }
+
+        .profile-form .title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            color: var(--primary-green);
+        }
+
+        .user-details {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .input-box {
+            width: calc(50% - 1rem);
+            margin-bottom: 1rem;
+        }
+
+        .input-box span.details {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #666;
+        }
+
+        .input-box input {
+            width: 100%;
+            padding: 0.7rem;
+            font-size: 1rem;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            transition: border-color 0.3s;
+        }
+
+        .input-box input:focus {
+            border-color: var(--primary-green);
+            outline: none;
+        }
+
+        /* Button */
+        .button input {
+            width: 100%;
+            padding: 0.8rem;
+            font-size: 1rem;
+            font-weight: bold;
+            color: var(--white);
+            background: var(--primary-green);
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .button input:hover {
+            background: var(--secondary-green);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .main-container {
+                flex-direction: column;
+            }
+            
+            .input-box {
+                width: 100%;
+            }
+        }
+
+
+
+      /* Notification styles */
+.notification {
+    position: relative; /* Relative to its container (below save button) */
+    margin-top: 15px; /* Space above the notification */
+    padding: 15px 20px;
+    color: white; /* Text color */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: center;
+    display: none; /* Hidden by default */
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    opacity: 0;
+    transform: translateY(-10px); /* Hidden state offset */
+}
+
+/* Show notification */
+.notification.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0); /* Slide into view */
+}
+
+/* Success notification with gradient */
+.notification.success {
+    background: linear-gradient(90deg, #0cdb3c, #4c4ad0); /* Green gradient */
+    color: #ffffff;
+}
+
+/* Error notification with gradient */
+.notification.error {
+    background: linear-gradient(90deg, #dc3545, #ff6b6b); /* Red gradient */
+    color: #ffffff;
+}
+
+/* Info notification with gradient */
+.notification.info {
+    background: linear-gradient(90deg, #17a2b8, #5dc6de); /* Blue gradient */
+    color: #ffffff;
+}
+
+/* Warning notification with gradient */
+.notification.warning {
+    background: linear-gradient(90deg, #ffc107, #ffe167); /* Yellow gradient */
+    color: #000000; /* Dark text for contrast */
+}
+
+
+
+
+    
+
+
+
+        
+
+       
+     
+        
+      
+        
+        

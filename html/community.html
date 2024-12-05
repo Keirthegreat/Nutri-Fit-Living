@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NutriFit Living Community</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="/css/community.css">
+</head>
+<body>
+    <div id="navbar-container"></div>
+    <script src="/Javascript/navbar.js"></script>
+    <script src="/Javascript/loadNavbar.js"></script>
+    <!-- Header -->
+    
+        
+    <div class="icons">
+        <div title="Home">🏠</div>
+        <div title="Messages">💬</div>
+        <div title="Notifications">🔔</div>
+        <div title="Profile">👤</div>
+    </div>
+    
+    <div id="container">
+        <!-- Left Sidebar -->
+        <aside class="sidebar">
+            <h3>Popular Tags</h3>
+            <div class="tag">🏋️ Exercise</div>
+            <div class="tag">🍎 Nutrition</div>
+            <div class="tag">💊 Supplements</div>
+        </aside>
+    
+        <!-- Main Content Area -->
+        <main class="main-content" id="mainContent">
+            <!-- Input Bar with Buttons -->
+            <div class="input-section">
+                <div class="input-wrapper">
+                    <img src="https://via.placeholder.com/40" alt="User Profile" class="profile-pic">
+                    <input type="text" id="newQuestionInput" placeholder="What do you want to ask or share?">
+                </div>
+                <div class="input-buttons">
+                    <button class="input-button" onclick="postQuestion()">
+                        💬 <span>Ask</span>
+                    </button>
+                    <button class="input-button" onclick="postAnswer()">
+                        ✏️ <span>Answer</span>
+                    </button>
+                    <button class="input-button" onclick="postUpdate()">
+                        📝 <span>Post</span>
+                    </button>
+                </div>
+            </div>
+    
+            <!-- Feed Section -->
+            <section class="feed" id="feed">
+                <!-- Example Question Card -->
+                <div class="question-card">
+                    <div class="question-header">
+                        <img src="https://via.placeholder.com/40" alt="User Avatar" class="question-avatar">
+                        <div class="question-user-info">
+                            <h4>John Doe</h4>
+                            <span>2 hours ago</span>
+                        </div>
+                    </div>
+                    <p class="question-text">
+                        What are the best exercises to improve core strength?
+                    </p>
+                    <div class="question-tags">
+                        <span>#Exercise</span>
+                        <span>#Fitness</span>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    
+
+    </div>
+    <script src="/Javascript/community.js"></script>
+   </body>
+   </html>

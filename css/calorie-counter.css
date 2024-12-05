@@ -1,0 +1,340 @@
+/* Calorie Counter Styles */
+        .container {
+            max-width: 600px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .header .title {
+            display: block;
+            font-size: 14px;
+            text-transform: uppercase;
+            color: #16c639;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin: 0;
+            color: #333;
+        }
+
+        .section {
+            margin-bottom: 1.5rem;
+        }
+
+        h2 {
+            font-size: 18px;
+            margin: 0;
+            color: #555;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-top: 0.5rem;
+        }
+
+        .progress-bar {
+            height: 10px;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            margin-top: 0.5rem;
+            overflow: hidden;
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            background-color: #4f46e5;
+            width: 0%;
+            animation: progress-animation 1s ease-in-out forwards;
+        }
+
+        @keyframes progress-animation {
+            from {
+                width: 0%;
+            }
+
+            to {
+                width: var(--progress-width, 0%);
+            }
+        }
+
+        .meal-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .meal-list-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #f0f0f0;
+            padding: 0.5rem;
+            border-radius: 4px;
+            margin-bottom: 0.5rem;
+        }
+
+        .meal-list-item span {
+            font-size: 16px;
+            color: #333;
+        }
+
+        .meal-list-item button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #ff4d4d;
+            font-size: 16px;
+        }
+
+        .add-meal-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .add-meal-button:hover {
+            background-color: #45a049;
+        }
+
+        .save-calories-btn {
+            background-color: #3f51b5; /* Blue */
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .save-calories-btn:hover {
+            background-color: #3949ab; /* Darker blue for hover effect */
+        }
+        
+        /* Food Search Suggestions */
+        .suggestions {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            max-height: 150px;
+            overflow-y: auto;
+            display: none; /* Start hidden */
+            position: absolute; /* Position suggestions absolutely */
+            background: white; /* Ensure suggestions background is white */
+            z-index: 1000; /* Keep suggestions above other elements */
+            top: 100%; /* Position it below the input field */
+            width: calc(100% - 2px); /* Match the input width */
+        }
+
+        .suggestions li {
+            padding: 0.5rem;
+            cursor: pointer;
+            background-color: #fff;
+        }
+
+        .suggestions li:hover {
+            background-color: #f0f0f0;
+        }
+
+        /* Food Search Result */
+        #results {
+            display: none; /* Hidden by default */
+            flex-direction: column;
+            align-items: center;
+            padding: 1.5rem;
+            margin-top: 1.5rem;
+            background-color: #e9f5e9;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        #results img {
+            max-width: 100px;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .food-details {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            text-align: left;
+        }
+
+        .food-details div {
+            min-width: 100px;
+            margin: 5px 10px;
+            text-align: center;
+        }
+
+        #loading {
+            text-align: center;
+            font-size: 1.2rem;
+            margin-top: 1rem;
+            display: none; /* Hidden by default */
+        }
+
+        /* Loading Spinner Animation */
+        @keyframes spinner {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .spinner {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            border-radius: 50%;
+            border-top-color: #4CAF50;
+            animation: spinner 1s ease infinite;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 1rem;
+                margin: 1rem;
+            }
+
+            h1 {
+                font-size: 20px;
+            }
+
+            h2 {
+                font-size: 16px;
+            }
+
+            .input-field {
+                padding: 0.4rem;
+            }
+
+            .meal-list-item span {
+                font-size: 14px;
+            }
+
+            .add-meal-button {
+                padding: 0.4rem;
+            }
+
+            #results .food-details {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            #results .food-details div {
+                width: auto;
+                margin-bottom: 10px;
+            }
+        }
+
+        /* Updated Food Search Section */
+        .search-section {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            position: relative; /* To position suggestions */
+        }
+
+        #foodInput {
+            flex: 1;
+            height: 48px;
+            padding: 0 16px;
+            font-size: 16px;
+            border: 2px solid #4CAF50;
+            border-radius: 8px;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        #foodInput::placeholder {
+            color: #94a3b8;
+        }
+
+        #foodInput:focus {
+            border-color: #45a049;
+            box-shadow: none;
+        }
+
+        #searchButton {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 48px;
+            padding: 0 16px;
+            font-size: 16px;
+            font-weight: 600;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            margin-left: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 5px; /* Slightly lower the button */
+        }
+
+
+
+
+
+
+
+
+        .notification-container {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            min-width: 250px;
+            padding: 15px;
+            border-radius: 5px;
+            font-size: 14px;
+            color: #fff;
+            display: none;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 0.3s ease-out;
+        }
+        
+        .notification-container.success {
+            background-color: #4caf50; /* Green for success */
+        }
+        
+        .notification-container.error {
+            background-color: #f44336; /* Red for error */
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        

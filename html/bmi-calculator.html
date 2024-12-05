@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bmi-calculator</title>
+    <!-- Include Font Awesome and Google Fonts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" defer></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Montserrat:400,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/bmi.css">
+    
+</head>
+  
+<body>
+    <div id="navbar-container"></div>
+    <script src="/Javascript/navbar.js"></script>
+    <script src="/Javascript/loadNavbar.js"></script>   
+<!-- Main Content -->
+<main>
+    <section id="bmi-section">
+        <div id="bmi-calculator">
+            <div class="container">
+                <h1>BMI Calculator</h1>
+                <form id="bmi-form">
+                    <div class="input-group">
+                        <label for="gender">Gender:</label>
+                        <div class="radio-group">
+                            <input type="radio" name="gender" id="male" value="male" checked>
+                            <label for="male">
+                                <img src="/IMG/man.png" alt="Male Icon" style="width: 20px; height: 20px;"> Male
+                            </label>
+                            <input type="radio" name="gender" id="female" value="female">
+                            <label for="female">
+                                <img src="/IMG/woman.png" alt="Female Icon" style="width: 20px; height: 20px;"> Female
+                            </label>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label for="age">Age:</label>
+                        <input type="number" id="age" min="10" max="100" value="25">
+                    </div>
+                    <div class="input-group">
+                        <label for="height">Height (cm):</label>
+                        <input type="number" id="height" min="100" max="250" value="170">
+                    </div>
+                    <div class="input-group">
+                        <label for="weight">Weight (kg):</label>
+                        <input type="number" id="weight" min="30" max="200" value="70">
+                    </div>
+                    <div class="button-group">
+                        <button type="button" id="calculate-btn">Calculate BMI</button>
+                        <button type="button" id="reset-btn">Reset</button>
+                        <button type="button" id="record-btn">Record BMI</button>
+                    </div>
+                </form>
+                <div id="result-container">
+                    <div id="bmi-result">BMI: <span id="bmi-value">--</span></div>
+                    <div id="bmi-status">Status: <span id="bmi-status-text">--</span></div>
+                    <div class="gauge-container">
+                        <div class="gauge">
+                            <div class="gauge-background"></div>
+                            <div class="needle"></div>
+                            <div class="gauge-bmi-range">
+                                <span class="range-1">0-18.4</span>
+                                <span class="range-2">18.5-24.9</span>
+                                <span class="range-3">25-29.9</span>
+                                <span class="range-4">30+</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gauge-labels">
+                        <span>Underweight</span>
+                        <span>Normal</span>
+                        <span>Overweight</span>
+                        <span>Obese</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="notification-container" class="notification-container"></div>
+
+    </section>
+</main>
+</body>
+
+<script src="/Javascript/bmi.js"></script>
+</html>
+
+

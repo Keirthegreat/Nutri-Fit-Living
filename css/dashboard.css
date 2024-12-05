@@ -1,0 +1,234 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f8fafc; /* Softer light blue for better readability */
+}
+
+/* Dashboard Header Styling */
+.dashboard-header {
+    text-align: center;
+    padding: 2rem;
+    background: linear-gradient(45deg, #05ad3a, #0ac40d); /* Green gradient */
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px; /* Rounded edges for a modern look */
+    width: calc(100% - 40px); /* Add consistent spacing from the viewport edges */
+    margin: 1rem auto; /* Center the header */
+}
+
+/* Title Styling */
+.title {
+    color: white;
+    font-size: 2.5rem;
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeInDown 1s forwards;
+    text-shadow: 1px 2px 5px rgba(0, 0, 0, 0.2); /* Add subtle shadow for depth */
+}
+
+/* Subtitle Styling */
+.subtitle {
+    color: rgba(255, 255, 255, 0.9);
+    margin-top: 0.5rem;
+    opacity: 0;
+    animation: fadeInUp 1s forwards 0.5s;
+    font-size: 1.2rem;
+}
+
+/* Dashboard Container */
+.dashboard-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.5rem; /* Add padding for better spacing */
+    background: #ffffff; /* Add a white background to separate content */
+    border-radius: 10px; /* Rounded corners for a modern look */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Soft shadow for depth */
+}
+
+/* Metrics Grid */
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Improve responsiveness */
+    gap: 2rem; /* Increase spacing between cards */
+    margin-bottom: 2rem;
+}
+
+/* Metric Card Styling */
+.metric-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* More pronounced shadow */
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.5s forwards;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.metric-card:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add stronger shadow on hover */
+}
+
+/* Metric Header */
+.metric-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    color: #05ad3a; /* Green theme */
+    font-weight: bold;
+}
+
+.metric-header i {
+    margin-right: 0.5rem;
+    font-size: 1.5rem; /* Make icons more prominent */
+}
+
+/* Progress Bar Styling */
+.progress-container {
+    background: #e2e8f0;
+    height: 10px;
+    border-radius: 5px;
+    margin: 1rem 0;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #05ad3a, #0ac40d); /* Match header colors */
+    width: 0;
+    transition: width 1s ease-in-out;
+}
+
+/* Metric Values */
+.metric-values {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1rem;
+    color: #64748b;
+}
+
+/* Chart Container */
+.chart-container {
+    display: flex; /* Use flexbox for horizontal alignment */
+    justify-content: space-between; /* Spread items across the container */
+    align-items: center; /* Center items vertically */
+    padding: 2rem;
+    margin: 0 auto;
+    background: #ffffff; /* Separate background for better visibility */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Add soft shadow */
+    max-width: 1200px;
+    gap: 2rem; /* Add space between chart and other elements */
+}
+
+/* Text Section Styling */
+.text-section {
+    flex: 1; /* Allow the text section to take up available space */
+    padding: 1rem;
+    text-align: center;
+}
+
+
+
+
+
+/* Parent Container */
+.chart-container {
+    display: flex; /* Use flexbox to control layout */
+    justify-content: space-between; /* Distribute items evenly */
+    align-items: center; /* Center items vertically */
+    width: 100%; /* Ensure the container takes full width */
+    padding: 0; /* Remove any padding */
+    margin: 0; /* Remove any margin */
+    box-sizing: border-box; /* Include padding and border in width */
+}
+
+/* Chart Styling */
+.chart {
+    flex-grow: 1; /* Allow the chart to grow and fill available space */
+    height: 400px; /* Adjust height as needed */
+    width: 100%; /* Make the chart responsive to container width */
+    margin: 0; /* Remove margins around the chart */
+    box-sizing: border-box; /* Include padding/border in width */
+}
+
+/* Title (optional) */
+.chart-title {
+    flex-basis: auto; /* Ensure the title does not affect the chart's width */
+    margin-right: 20px; /* Add space between the title and chart */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .chart-container {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+        gap: 1.5rem; /* Add spacing between elements */
+    }
+
+    .chart {
+        height: 300px; /* Reduce chart height on smaller screens */
+        width: 100%; /* Ensure it still takes full width */
+    }
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+canvas {
+    width: 100% !important;
+    height: 400px !important;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .dashboard-container {
+        padding: 1rem; /* Reduce padding on smaller screens */
+    }
+
+    .metrics-grid {
+        grid-template-columns: 1fr; /* Single column on small screens */
+    }
+
+    .chart-container {
+        padding: 1rem; /* Reduce padding for compact layout */
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 2rem; /* Adjust font size for smaller screens */
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    .metric-card {
+        padding: 1.5rem; /* Reduce padding for smaller screens */
+    }
+}

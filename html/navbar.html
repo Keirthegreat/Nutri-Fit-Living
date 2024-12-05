@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar | NutriFit Living</title>
+    <!-- Include Font Awesome for icons -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" defer></script>
+ 
+    <style>
+       /* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #4CAF50;
+    padding: 1.5rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Mobile-Specific Header Adjustments */
+@media (max-width: 768px) {
+    header {
+        padding: 2.5rem 0; /* Increase vertical padding for a taller header */
+    }
+}
+
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    
+}
+
+.logo {
+    font-size: 1.5rem; /* Keep the font size */
+    font-weight: bold; /* Keep the bold font */
+    color: white; /* Text color */
+    position: relative; /* Default for desktop */
+}
+
+/* Center the logo only for mobile view */
+@media (max-width: 768px) {
+    .logo {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+
+.menu-toggle {
+    display: none;
+    color: white;
+    font-size: 1.8rem;
+    cursor: pointer;
+    z-index: 1100;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 1rem;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #f9f9f9;
+    transform: scale(1.1);
+}
+
+
+/* Mobile Navigation Enhanced Design */
+@media (max-width: 768px) {
+    /* Color Palette remains the same */
+    :root {
+        --primary-color: #66BB6A;
+        --primary-light: #98ee99;
+        --primary-dark: #338a3e;
+        --secondary-color: #66BB6A;
+        --text-color: #FFFFFF;
+        --text-muted: rgba(255, 255, 255, 0.7);
+        --background-color: #F1F8E9;
+        --accent-color: #81C784;
+        --shadow-color: rgba(0, 0, 0, 0.2);
+        --hover-overlay: rgba(255, 255, 255, 0.1);
+    }
+
+    /* Redesigned Burger Menu Icon */
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        z-index: 1100;
+        position:absolute;
+        right: 1rem;
+        outline: none;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .menu-toggle:hover {
+        transform: scale(1.1);
+        filter: drop-shadow(0 0 8px var(--primary-light));
+    }
+
+    .menu-toggle span {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        background-color: #FFFFFF;
+        border-radius: 4px;
+        transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    .menu-toggle span:nth-child(1) {
+        top: 0;
+    }
+
+    .menu-toggle span:nth-child(2) {
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .menu-toggle span:nth-child(3) {
+        bottom: 0;
+    }
+
+    /* Advanced X Animation */
+    .menu-toggle.active span:nth-child(1) {
+        top: 50%;
+        transform: translateY(-50%) rotate(45deg);
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active span:nth-child(3) {
+        bottom: 50%;
+        transform: translateY(50%) rotate(-45deg);
+    }
+
+    /* Navigation Menu */
+    nav ul {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100%;
+        width: 85%; /* Flexible width for smaller screens */
+        max-width: 320px; /* Limit width for larger mobile screens */
+        min-width: 250px; /* Minimum width for usability */
+        flex-direction: column;
+        background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+        box-shadow: -8px 0 20px var(--shadow-color);
+        padding: 6rem 1.5rem 2rem;
+        overflow-y: auto;
+        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 1000;
+        display: flex;
+        scrollbar-width: thin;
+        scrollbar-color: var(--primary-light) transparent;
+        
+    }
+
+    nav ul::-webkit-scrollbar {
+        width: 4px;
+    }
+
+    nav ul::-webkit-scrollbar-thumb {
+        background-color: var(--primary-light);
+        border-radius: 5px;
+    }
+
+    nav ul.active {
+        right: 0;
+        transform: translateX(0);
+    }
+
+    nav ul li {
+        margin: 0.5rem 0;
+        width: 100%;
+        opacity: 0;
+        transform: translateX(50px);
+        transition: all 0.5s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    nav ul.active li {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    nav ul li a {
+        padding: 1.2rem 1.5rem;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        color: var(--text-color);
+        font-size: clamp(1rem, 2.5vw, 1.2rem); /* Responsive font size */
+        text-transform: uppercase;
+        letter-spacing: 1.2px;
+        position: relative;
+        transition: all 0.3s ease;
+        border-radius: 8px;
+    }
+
+    nav ul li a:hover {
+        background-color: var(--hover-overlay);
+        padding-left: 2rem; /* Subtle hover movement */
+        color: var(--primary-light);
+    }
+
+    nav ul li a:hover .nav-icon {
+        transform: scale(1.2);
+        filter: brightness(1.5);
+    }
+
+    .nav-icon {
+        width: 28px;
+        height: 28px;
+        margin-right: 12px;
+        vertical-align: middle;
+        transition: transform 0.3s ease, filter 0.3s ease;
+    }
+
+    /* Improved Hover Effects */
+    nav ul li a:hover::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 4px;
+        height: 100%;
+        background-color: var(--primary-light);
+        transform: scaleY(1);
+        transition: all 0.3s ease;
+    }
+
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6); /* Darkened overlay */
+        visibility: hidden;
+        opacity: 0;
+        transition: all 0.4s ease;
+        z-index: 900;
+    }
+
+    .overlay.active {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    body.menu-open {
+        overflow: hidden;
+        position: fixed;
+        width: 100%;
+        touch-action: none;
+    }
+
+    @keyframes menuItemLoad {
+        0% {
+            transform: translateY(20px);
+            opacity: 0;
+        }
+        100% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    nav ul.active li {
+        animation: menuItemLoad 0.6s ease forwards;
+    }
+}
+
+/* General icon styling for mobile */
+.nav-icon {
+    width: clamp(24px, 5vw, 30px); /* Dynamic size for different screen widths */
+    height: clamp(24px, 5vw, 30px); /* Dynamic size for better responsiveness */
+    margin-right: 12px; /* Adjusted spacing for better alignment */
+    display: inline-block; /* Ensure icons align inline with text */
+    vertical-align: middle; /* Align icons with the text baseline */
+    transition: transform 0.3s ease, filter 0.3s ease; /* Smooth hover animation */
+}
+
+/* Mobile-specific styles */
+@media (max-width: 768px) {
+    /* Icon styling specifically for smaller screens */
+    .nav-icon {
+        width: clamp(20px, 4vw, 28px); /* Slightly smaller for tighter layouts */
+        height: clamp(20px, 4vw, 28px);
+        margin-right: 10px; /* Reduced margin for smaller screens */
+    }
+
+    /* Navigation links with icons */
+    nav ul li a {
+        display: flex; /* Align icons and text horizontally */
+        align-items: center; /* Vertically center icons and text */
+        padding: 0.8rem 1.2rem; /* Adjusted padding for touch-friendly links */
+        font-size: clamp(0.9rem, 2.5vw, 1rem); /* Responsive font size */
+        color: var(--text-color); /* Use the theme's text color */
+        text-transform: uppercase; /* Maintain uniform style */
+        letter-spacing: 1.2px; /* Slightly tightened letter-spacing */
+        transition: all 0.3s ease; /* Smooth hover transition */
+    }
+
+    /* Hover effect for mobile icons */
+    nav ul li a:hover .nav-icon {
+        transform: scale(1.15); /* Slightly larger hover effect */
+        filter: brightness(1.3); /* Make icons more vibrant on hover */
+    }
+
+    /* Hover effect for navigation links */
+    nav ul li a:hover {
+        background-color: var(--hover-overlay); /* Subtle background overlay on hover */
+        padding-left: 1.5rem; /* Create a slight slide effect */
+        color: var(--primary-light); /* Use the lighter theme color */
+        border-radius: 8px; /* Rounded edges for modern design */
+    }
+
+    /* Improved touch area for links */
+    nav ul li a {
+        min-height: 48px; /* Ensure links are touch-friendly */
+    }
+}
+
+
+/* Desktop Hover Effects with Blue Interaction */
+@media (min-width: 769px) {
+    /* Color Variables */
+    :root {
+        --primary-blue: #1976D2;
+        --text-color: #333;
+        --hover-blue: #2196F3;
+        --transition-duration: 0.3s;
+    }
+
+    nav ul li a {
+        position: relative;
+        transition: 
+            color var(--transition-duration) ease,
+            transform var(--transition-duration) ease;
+        overflow: hidden;
+        display: inline-block;
+    }
+
+    nav ul li a::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: -100%;
+        width: 100%;
+        height: 2px;
+        background-color: var(--primary-blue);
+        transition: all var(--transition-duration) ease;
+    }
+
+    nav ul li a:hover {
+        color: var(--primary-blue);
+        transform: translateY(-2px);  /* Subtle lift effect */
+        text-shadow: 0 1px 2px rgba(25,118,210,0.1);  /* Soft blue depth effect */
+    }
+
+    nav ul li a:hover::before {
+        left: 0;
+    }
+
+    /* Additional Subtle Hover Variations */
+    nav ul li a::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 0;
+        height: 1px;
+        background-color: rgba(25,118,210,0.2);
+        transition: width var(--transition-duration) ease;
+    }
+
+    nav ul li a:hover::after {
+        width: 100%;
+    }
+    
+    /* Optional: Hover Glow */
+    @supports (filter: drop-shadow(0 0 2px rgba(0,0,0,0.1))) {
+        nav ul li a:hover {
+            filter: drop-shadow(0 2px 2px rgba(25,118,210,0.1));
+        }
+    }
+}
+
+/* Default: Show icons for mobile-first design */
+nav ul li a img.nav-icon,
+nav ul li a i.nav-icon {
+    display: inline-block; /* Ensure icons are visible */
+}
+
+/* Hide icons only on desktop view */
+@media (min-width: 769px) {
+    nav ul li a img.nav-icon,
+    nav ul li a i.nav-icon {
+        display: none; /* Hide icons for screens 769px and wider */
+    }
+}
+
+
+
+
+
+
+.logout-button {
+    color: red;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.logout-button:hover {
+    color: darkred;
+}
+
+.logout-button {
+    cursor: pointer;
+}
+
+
+
+</style>
+
+<!-- Navigation Bar -->     
+<header>         
+    <nav>
+        <div class="logo">NutriFit Living</div>
+        <div class="menu-toggle" aria-label="Toggle menu">
+            <!-- Replace Font Awesome with spans for the animation -->
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul>
+            <li>
+                <a href="main.html">
+                    <img src="/IMG/home.png" class="nav-icon">
+                    Home
+                </a>
+            </li>
+            <li>
+                <a href="bmi-calculator.html">
+                    <img src="/IMG/bmi.png" class="nav-icon">
+                    BMI Calculator
+                </a>
+            </li>
+            <li>
+                <a href="calorie-counter.html">
+                    <img src="/IMG/calories-calculator.png" class="nav-icon">
+                    Calorie Counter
+                </a>
+            </li>
+            <li>
+                <a href="nutribot.html">
+                    <img src="/IMG/robot.png" class="nav-icon">
+                    Nutribot
+                </a>
+            </li>
+            <li>
+                <a href="dashboard.html">
+                    <img src="/IMG/dashboard.png" class="nav-icon">
+                    Dashboard
+                </a>
+            </li>
+            <li>
+                <a href="community.html">
+                    <img src="/IMG/community.png" class="nav-icon">
+                    Community
+                </a>
+            </li>
+            <li>
+                <a href="profile.html">
+                    <img src="/IMG/profile.png" class="nav-icon">
+                    Profile
+                </a>
+            </li>
+            <!-- Logout Button -->
+            <li>
+                <a id="logoutButton" class="logout-button">
+                    <img src="/IMG/logout.png" class="nav-icon">
+                    Logout
+                </a>
+            </li>
+        </ul>
+    </nav>
+    
+    <!-- Add overlay div -->
+    <div class="overlay"></div>
+</header>
+<script src="/Javascript/navbar.js"></script>
+<script src="/Javascript/logout.js"></script>
+</body>
+</html>

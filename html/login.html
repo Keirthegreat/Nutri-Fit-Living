@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nutri Fit - Login & Sign Up</title>
+  <link rel="stylesheet" href="/css/login.css">
+
+  <!-- External Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+
+  <body>
+    <div class="container">
+      <!-- Left Content -->
+      <div class="left">
+        <h1>Welcome to Nutri Fit!</h1>
+        <p>Your personalized fitness journey starts here. Sign up or log in to access your tailored fitness plans, track your progress, and stay fit!</p>
+      </div>
+  
+      <!-- Right Content -->
+      <div class="right">
+        <!-- Login Form -->
+        <div class="form-box" id="loginForm">
+          <h2>Login</h2>
+          <form id="loginFormElement" onsubmit="handleLogin(event)">
+            <div class="input-box">
+              <input type="text" id="loginUsername" required>
+              <label>Username</label>
+              <div class="underline"></div>
+            </div>
+            <div class="input-box">
+              <input type="password" id="loginPassword" required>
+              <label>Password</label>
+              <div class="underline"></div>
+            </div>
+            <div class="show-password-container">
+              <input type="checkbox" id="showLoginPassword" onclick="togglePasswordVisibility('loginPassword')">
+              <label for="showLoginPassword">Show Password</label>
+            </div>
+            <button type="submit" class="btn">Log In</button>
+          </form>
+          <div class="notification error" id="loginNotification">Error: Invalid username or password.</div>
+          <p class="toggle-link">Don’t have an account? <a href="#" onclick="toggleForm('signup')">Sign up here</a></p>
+        </div>
+  
+        <!-- Signup Form -->
+        <div class="form-box" id="signupForm" style="display: none;">
+          <h2>Sign Up</h2>
+          <form id="signupFormElement" onsubmit="handleSignup(event)">
+            <div class="input-box">
+              <input type="text" id="signupFullName" required placeholder=" ">
+              <label>Full Name</label>
+              <div class="underline"></div>
+            </div>
+            <div class="input-box">
+              <input type="email" id="signupEmail" required placeholder=" ">
+              <label>Email</label>
+              <div class="underline"></div>
+            </div>
+            <div class="input-box">
+              <input type="password" id="signupPassword" required placeholder=" " oninput="checkPasswordStrength()">
+              <label>Password</label>
+              <div class="underline"></div>
+            </div>
+            <div class="strength-meter">
+              <div id="strengthMeterFill" class="strength-meter-fill"></div>
+            </div>
+            <div id="strengthText" class="strength-text">Weak</div>
+            <div class="show-password-container">
+              <input type="checkbox" id="showSignupPassword" onclick="togglePasswordVisibility('signupPassword')">
+              <label for="showSignupPassword">Show Password</label>
+            </div>
+            <div class="input-box">
+              <input type="text" id="signupUsername" required placeholder=" ">
+              <label>Username</label>
+              <div class="underline"></div>
+            </div>
+            <button type="submit" class="btn">Sign Up</button>
+          </form>
+          <div class="notification success" id="signupNotification">You have successfully signed up! Please log in.</div>
+          <p class="toggle-link">Already have an account? <a href="#" onclick="toggleForm('login')">Log in here</a></p>
+        </div>
+      </div>
+    </div>
+  </body>
+  
+
+  <!-- JavaScript for Toggling Forms & Validation -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="/Javascript/login.js"></script>
+
+
+</body>
+</html>

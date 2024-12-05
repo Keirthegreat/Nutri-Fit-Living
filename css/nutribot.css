@@ -1,0 +1,309 @@
+     /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Roboto', sans-serif;
+      }
+
+      /* Set html and body to take full height */
+       html, body {
+       height: 100%; /* Full height */
+       width: 100%; /* Full width */
+       background-color: #66BB6A; /* Match the green gradient or base color */
+       color: #333; /* Default text color */
+       display: flex;
+       flex-direction: column;
+       overflow: hidden; /* Prevent scrollbars from appearing unnecessarily */
+       border: none; /* Ensure no borders are applied */
+       }
+       
+
+        /* Full-page Chat Layout */
+        .container {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            overflow: hidden;
+        }
+
+        /* Chat Section */
+        .chat-section {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .intro {
+            background: linear-gradient(135deg, #66BB6A, #81C784); /* Add a vibrant gradient background */
+            color: #ffffff; /* Bright text for contrast */
+            padding: 1.5rem; /* Maintain original padding */
+            text-align: center; /* Center-align content */
+            border-radius: 10px; /* Rounded corners for modern look */
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+            animation: fadeInSlide 1s ease-out; /* Add smooth entry animation */
+            position: relative; /* For decorative elements */
+            overflow: hidden; /* Clip decorative elements */
+        }
+        
+        /* Decorative Gradient Glow */
+        .intro::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at center, rgba(255, 255, 255, 0.1), transparent);
+            transform: rotate(45deg);
+            z-index: 0;
+            animation: glowPulse 4s infinite alternate; /* Glow pulse animation */
+        }
+        
+        /* Headline Styling */
+        .intro h1 {
+            font-size: 1.5rem; /* Maintain original font size */
+            margin-bottom: 0.5rem; /* Maintain spacing */
+            text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); /* Add subtle text shadow */
+            letter-spacing: 1px; /* Slightly increase letter spacing */
+            position: relative;
+            z-index: 1; /* Ensure text stays above decorative elements */
+        }
+        
+        /* Paragraph Styling */
+        .intro p {
+            font-size: 1rem; /* Maintain original font size */
+            line-height: 1.6; /* Add better spacing for readability */
+            color: rgba(255, 255, 255, 0.9); /* Softer white */
+            position: relative;
+            z-index: 1; /* Ensure text stays above decorative elements */
+        }
+        
+        /* Highlight Underline Animation for Headline */
+        .intro h1::after {
+            content: "";
+            display: block;
+            width: 50%; /* Centered underline */
+            height: 4px;
+            background: linear-gradient(90deg, #81C784, #43A047);
+            margin: 0.5rem auto 0;
+            border-radius: 2px;
+            animation: slideIn 1.5s ease-in-out infinite alternate; /* Add subtle slide animation */
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Fade-In Slide Animation */
+        @keyframes fadeInSlide {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Glow Pulse Animation */
+        @keyframes glowPulse {
+            from {
+                opacity: 0.2;
+            }
+            to {
+                opacity: 0.6;
+            }
+        }
+        
+        /* Slide-In Underline Animation */
+        @keyframes slideIn {
+            from {
+                transform: scaleX(0.5);
+            }
+            to {
+                transform: scaleX(1.1);
+            }
+        }
+        
+
+        /* Chat Area */
+        .chat-area {
+            flex: 1;
+            overflow-y: auto;
+            padding: 1rem;
+            background-color: #F5F5F5;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .bot-message, .user-message {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding: 0.5rem 0;
+            animation: fadeIn 0.3s forwards;
+        }
+
+        /* Avatar Styling */
+        .bot-message img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 0.5rem;
+        }
+
+        /* NutriBot Message Styling */
+        .bot-message {
+            justify-content: flex-start; /* Align bot messages to the left */
+        }
+
+        .bot-message .message {
+            background-color: #E8F5E9; /* Light green background */
+            color: #388E3C; /* Dark green text for NutriBot */
+            padding: 0.8rem 1rem;
+            border-radius: 15px;
+            max-width: 75%;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            word-wrap: break-word;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: left; /* Text aligned to the left */
+            border: 1px solid #66BB6A; /* Subtle border for NutriBot messages */
+        }
+
+        /* User Message Styling */
+        .user-message {
+            flex-direction: row-reverse; /* Avatar on the right */
+            justify-content: flex-end; /* Align user messages to the right */
+        }
+
+        .user-message .message {
+            background-color: #E3F2FD; /* Light blue for user */
+            color: #1565C0; /* Dark blue text for user */
+            padding: 0.8rem 1rem;
+            border-radius: 15px;
+            max-width: 75%;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            word-wrap: break-word;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: right; /* Text aligned to the right */
+            margin-left: auto; /* Push the message to the far right */
+            border: 1px solid #42A5F5; /* Subtle border for user messages */
+        }
+
+        /* Typing Animation */
+        .typing-indicator-container {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            margin-top: 1rem;
+            color: #4CAF50;
+            font-size: 1rem;
+        }
+
+        .typing-indicator span {
+            width: 8px;
+            height: 8px;
+            background-color: #4CAF50;
+            border-radius: 50%;
+            display: inline-block;
+            margin: 0 2px;
+            animation: bounceTyping 0.6s infinite;
+        }
+
+        @keyframes bounceTyping {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+                        /* Input Area */
+                        .input-area {
+                            display: flex;
+                            align-items: center;
+                            padding: 1rem;
+                            background-color: #E8F5E9; /* Light green background */
+                            border-top: 2px solid #66BB6A; /* Enhanced border */
+                            box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+                            gap: 0.5rem; /* Spacing between input and button */
+                        }
+        
+                        .input-area input {
+                            flex: 1; /* Ensure input resizes dynamically */
+                            padding: 0.8rem 1rem;
+                            border: 2px solid #4CAF50; /* Green border for consistency */
+                            border-radius: 15px; /* Rounded corners */
+                            outline: none;
+                            font-size: 1rem;
+                            background-color: #ffffff; /* White background */
+                            color: #333; /* Text color for readability */
+                            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Subtle input shadow */
+                            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+                        }
+        
+                        .input-area input:focus {
+                            border-color: #66BB6A; /* Highlighted border on focus */
+                            box-shadow: 0px 2px 8px rgba(102, 187, 106, 0.5); /* Glow effect */
+                        }
+        
+                        .input-area button {
+                            background-color: #4CAF50; /* Main button color */
+                            border: none;
+                            color: #fff; /* White text */
+                            padding: 0.8rem 1.2rem;
+                            border-radius: 15px; /* Rounded corners */
+                            cursor: pointer;
+                            font-size: 1rem;
+                            font-weight: bold; /* Emphasize button text */
+                            transition: background-color 0.3s ease, transform 0.2s ease;
+                            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Button shadow */
+                            white-space: nowrap; /* Prevent button text wrapping */
+                        }
+        
+                        .input-area button:hover {
+                            background-color: #388E3C; /* Darker green on hover */
+                            transform: translateY(-2px); /* Slight hover lift */
+                        }
+        
+                        .input-area button:active {
+                            background-color: #2E7D32; /* Even darker green on active */
+                            transform: translateY(0); /* Reset lift on click */
+                        }
+        
+                        /* Responsive Adjustments */
+                        @media (max-width: 600px) {
+                            .input-area {
+                                padding: 0.8rem; /* Reduce padding for smaller screens */
+                                gap: 0.4rem; /* Slightly reduced spacing */
+                            }
+        
+                            .input-area input {
+                                font-size: 0.9rem; /* Adjust input text size */
+                                padding: 0.7rem 0.9rem; /* Adjust padding */
+                            }
+        
+                            .input-area button {
+                                font-size: 0.9rem; /* Adjust button text size */
+                                padding: 0.7rem 1rem; /* Adjust button padding */
+                            }
+                        }
+        
+                        @media (max-width: 400px) {
+                            .input-area {
+                                gap: 0.3rem; /* Further reduce spacing for very small screens */
+                            }
+        
+                            .input-area input, .input-area button {
+                                font-size: 0.85rem; /* Reduce font size for very small screens */
+                                padding: 0.6rem 0.8rem; /* Adjust padding for compact design */
+                            }
+                        }
+        

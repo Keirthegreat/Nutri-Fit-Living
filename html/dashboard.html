@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+     <link rel="stylesheet" href="/css/dashboard.css">
+</head>
+<body>
+    <div id="navbar-container"></div>
+    <script src="/Javascript/navbar.js"></script>
+    <script src="/Javascript/loadNavbar.js"></script>
+
+    <div class="dashboard-header">
+        <h1 class="title">Fitness Dashboard</h1>
+        <p class="subtitle">Track your health and fitness progress at a glance</p>
+    </div>
+   
+    <div class="dashboard-container">
+        <!-- Metrics Section -->
+        <section class="metrics-section">
+            <h2 class="section-title">Your Metrics</h2>
+            <div class="metrics-grid">
+                <!-- Metric Card 1 -->
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <i class="fas fa-weight"></i>
+                        <h3>Weight Progress</h3>
+                    </div>
+                    <div class="metric-values">
+                        <span>Current: 81.8kg</span>
+                        <span>Target: 75kg</span>
+                    </div>
+                    <div class="progress-container">
+                        <div class="progress-bar" data-progress="85"></div>
+                    </div>
+                </div>
+                <!-- Metric Card 2 -->
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <i class="fas fa-calculator"></i>
+                        <h3>BMI Status</h3>
+                    </div>
+                    <div class="metric-values">
+                        <span>Current: 26.2</span>
+                        <span>Ideal: 23.0</span>
+                    </div>
+                    <div class="progress-container">
+                        <div class="progress-bar" data-progress="75"></div>
+                    </div>
+                </div>
+                <!-- Metric Card 3 -->
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <i class="fas fa-fire"></i>
+                        <h3>Daily Calories</h3>
+                    </div>
+                    <div class="metric-values">
+                        <span>Consumed: 1800</span>
+                        <span>Target: 2000</span>
+                    </div>
+                    <div class="progress-container">
+                        <div class="progress-bar" data-progress="90"></div>
+                    </div>
+                </div>
+               
+        
+            <!-- Chart Section -->
+        <section class="chart-section">
+            <h2 class="section-title">Weight Progress Over Time</h2>
+            <div class="chart-container">
+                <canvas id="weightChart"></canvas>
+            </div>
+        </section>
+    </div>
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+    <script src="/Javascript/dashboard.js"></script>
+</body>
+</html>

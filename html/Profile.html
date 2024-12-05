@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <!-- Include Font Awesome and Google Fonts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" defer></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Montserrat:400,600&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="/css/Profile.css">
+</head>
+<body>
+    <div id="navbar-container"></div>
+    <script src="/Javascript/navbar.js"></script>
+    <script src="/Javascript/loadNavbar.js"></script> 
+
+   
+
+ <!-- Main Container -->
+ <div class="main-container">
+    <!-- Sidebar Section -->
+    <div class="sidebar">
+        <div class="profile-picture-section">
+            <img src="https://via.placeholder.com/150" alt="Profile Picture" id="profilePic">
+            <!-- Updated label text -->
+            <label for="uploadImage" style="display: block; margin-top: 10px; font-size: 0.9rem; background-color: var(--primary-green); color: white; padding: 10px; border-radius: 5px; cursor: pointer; text-align: center;">Upload Your Image</label>
+            <input type="file" id="uploadImage" accept="image/*" name="profile_image" style="display: none;">
+        </div>
+
+        <div class="username" id="displayName">John Doe</div>
+
+        <!-- Editable Role Section -->
+        <div class="role">
+            <span id="userRole">Health Enthusiast</span>
+            <span class="edit-role-btn" onclick="toggleRoleEdit()"> (Edit)</span>
+        </div>
+        <div class="role-edit" style="display: none;">
+            <input type="text" id="roleInput" placeholder="Enter your role" value="Health Enthusiast">
+            <button onclick="saveRole()" class="button input">Save</button>
+        </div>
+
+        <!-- Social Links Section -->
+        <div class="social-links">
+            <a href="#" id="facebookLink"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" id="twitterLink"><i class="fab fa-twitter"></i></a>
+            <a href="#" id="instagramLink"><i class="fab fa-instagram"></i></a>
+            <span class="edit-social-btn" onclick="toggleSocialEdit()"> (Edit Links)</span>
+        </div>
+        <div class="social-edit" style="display: none;">
+            <input type="url" id="facebookInput" placeholder="Facebook URL" value="#">
+            <input type="url" id="twitterInput" placeholder="Twitter URL" value="#">
+            <input type="url" id="instagramInput" placeholder="Instagram URL" value="#">
+            <button onclick="saveSocialLinks()" class="button input">Save Links</button>
+        </div>
+    </div>
+
+    <!-- Profile Form Section -->
+    <div class="profile-form">
+        <div class="title">Edit Profile</div>
+
+        <form id="profileForm" method="POST" action="update.php" enctype="multipart/form-data">
+            <div class="user-details">
+                <div class="input-box">
+                    <span class="details">Full Name</span>
+                    <input type="text" id="fullName" name="full_name" placeholder="Enter your name" required oninput="updateDisplayName()">
+                </div>
+                <div class="input-box">
+                    <span class="details">Username</span>
+                    <input type="text" id="username" name="username" placeholder="Enter your username" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Email</span>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Phone Number</span>
+                    <input type="tel" id="phone" name="phone_number" placeholder="Enter your number" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Location</span>
+                    <input type="text" id="location" name="location" placeholder="Enter your location" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Date of Birth</span>
+                    <input type="date" id="dob" name="dob" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Height (cm)</span>
+                    <input type="number" id="height" name="height" placeholder="Enter your height" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Weight (kg)</span>
+                    <input type="number" id="weight" name="weight" placeholder="Enter your weight" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Target Weight (kg)</span>
+                    <input type="number" id="targetWeight" name="target_weight" placeholder="Enter your target weight" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Ideal BMI</span>
+                    <input type="number" id="idealBMI" name="ideal_bmi" step="0.1" placeholder="Enter your ideal BMI" required>
+                </div>
+            </div>
+
+            <div class="button">
+                <input type="submit" value="Save">
+            </div>
+            <div id="notification" class="notification">Profile saved successfully!</div>
+
+
+</div>
+<script type="module" src="/Javascript/profile.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+</body>
+</html>

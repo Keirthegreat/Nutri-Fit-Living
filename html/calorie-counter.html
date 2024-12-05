@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calorie Counter</title>
+    <!-- Include Font Awesome for icons -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" defer></script>
+    <link rel="stylesheet" href="/css/calorie-counter.css">
+</head>
+
+<body>
+    <div id="navbar-container"></div>
+    <script src="/Javascript/navbar.js"></script>
+    <script src="/Javascript/loadNavbar.js"></script>
+
+    <!-- Calorie Counter Content -->
+    <div class="container">
+        <div class="header">
+            <span class="title">NutriFit Living</span>
+            <h1>Calorie Counter</h1>
+        </div>
+
+        <div id="notification-container" class="notification-container" style="display: none;"></div>
+
+        <div class="section">
+            <div class="section-header">
+                <h2>Daily Goal</h2>
+                <button id="toggleGoalEdit" class="icon-button" aria-label="Edit daily goal">&#9660;</button>
+            </div>
+            <input type="number" id="dailyGoal" class="input-field" placeholder="Set your daily calorie goal" style="display: none;" />
+        </div>
+
+        <div class="section">
+            <h2>Progress</h2>
+            <div class="progress-bar">
+                <div id="progressFill" class="progress-bar-fill" style="--progress-width: 0%;"></div>
+            </div>
+            <div class="progress-info">
+                <span id="caloriesConsumed">0 cal</span> / <span id="calorieGoalDisplay">2000 cal</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Add Meal</h2>
+            <div class="add-meal-inputs">
+                <input type="text" id="mealName" class="input-field" placeholder="Meal name" />
+                <input type="number" id="mealCalories" class="input-field" placeholder="Calories" />
+                <div class="buttons-container">
+                    <button id="addMealButton" class="add-meal-button" aria-label="Add meal">Add</button>
+                    <button id="saveCaloriesButton" 
+                    class="add-meal-button save-button save-calories-btn" 
+                    aria-label="Save calories">
+                    Save Calories
+                   </button>
+<div class="section"></div>
+
+            <h2>Meals</h2>
+            <ul id="mealList" class="meal-list"></ul>
+        </div>
+
+        <!-- Food Search Section -->
+        <div class="section">
+            <h2 id="foodSearchTitle">Food Search</h2>
+            <div class="search-section">
+                <input type="text" id="foodInput" class="input-field" placeholder="Search food">
+                <button id="searchButton" class="add-meal-button" aria-label="Search"><i class="fas fa-search"></i></button>
+                <ul id="suggestions" class="suggestions"></ul> <!-- Suggestions list placed correctly inside the search-section -->
+            </div>
+        </div>
+
+        <!-- Loading Animation -->
+        <div id="loading" class="spinner"></div>
+
+        <!-- Food Search Result -->
+        <div id="results">
+            <img id="food-image" src="" alt="Food image">
+            <h3 id="food-name">Food Name</h3>
+            <div class="food-details">
+                <div>Calories: <span id="calories"></span> kcal</div>
+                <div>Proteins: <span id="proteins"></span> g</div>
+                <div>Fats: <span id="fats"></span> g</div>
+                <div>Carbohydrates: <span id="carbs"></span> g</div>
+                <div>Grams: <span id="grams"></span> g</div> <!-- New grams div added -->
+            </div>
+        </div>
+        
+
+        <div id="error-message">Error retrieving food data.</div>
+    </div>
+    <script src="/Javascript/calorie-counter.js"></script>
+</body>
+
+</html>

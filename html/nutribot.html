@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutribot Chat</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="/css/nutribot.css">
+</head>
+<body>
+    <div id="navbar-container"></div>
+    <script src="/Javascript/navbar.js"></script>
+    <script src="/Javascript/loadNavbar.js"></script>
+    
+    <div class="container">
+        <!-- Chat Section -->
+        <div class="chat-section">
+            <div class="intro">
+                <h1>Welcome to Nutribot!</h1>
+                <p>Your personal AI nutritionist and fitness companion. Ask me anything about health, nutrition, and wellness!</p>
+            </div>
+
+            <!-- Chat Area -->
+            <div class="chat-area" id="chatArea" data-bot-avatar="https://i.postimg.cc/prmcZkmT/bot.png">
+                <div class="bot-message">
+                    <img src="https://i.postimg.cc/prmcZkmT/bot.png" alt="Nutribot Avatar" />
+                    <div class="message">Hello! I'm Nutribot, your virtual nutrition and fitness assistant. How can I help you today?</div>
+                </div>
+            </div>
+            <!-- Input Area -->
+            <div class="input-area">
+                <input type="text" id="userInput" placeholder="Ask about nutrition, fitness, or wellness...">
+                <button onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+    </div>
+    <script src="/Javascript/nutribot.js"></script>
+</body>
+</html>
+
