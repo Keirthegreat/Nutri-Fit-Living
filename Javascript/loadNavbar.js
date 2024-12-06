@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    fetch('/html/navbar.html') // Replace with the actual path to navbar.html
+    fetch('/navbar.html') // Replace with the actual path to navbar.html
         .then(response => {
             if (!response.ok) {
                 throw new Error(`Failed to load navbar. Status: ${response.status}`);
