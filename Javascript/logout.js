@@ -20,7 +20,7 @@ const observer = new MutationObserver((mutations) => {
                             .replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/");
                     });
 
-                    console.log('Redirecting to login.html');
+                    console.log('Redirecting to index.html');
                     window.location.href = 'index.html';
                 });
 
