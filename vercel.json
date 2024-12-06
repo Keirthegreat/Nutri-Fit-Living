@@ -1,0 +1,39 @@
+{
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/html/index.html"
+    }
+  ],
+  "static": {
+    "headers": [
+      {
+        "source": "/css/(.*)",
+        "headers": [
+          {
+            "key": "Content-Type",
+            "value": "text/css"
+          }
+        ]
+      },
+      {
+        "source": "/Javascript/(.*)",
+        "headers": [
+          {
+            "key": "Content-Type",
+            "value": "application/javascript"
+          }
+        ]
+      },
+      {
+        "source": "/IMG/(.*)",
+        "headers": [
+          {
+            "key": "Content-Type",
+            "value": "image/*"
+          }
+        ]
+      }
+    ]
+  }
+}
