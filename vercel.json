@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/",
-      "destination": "/index.html"  // Ensure this points to your root index.html
+      "destination": "/index.html"
     }
   ],
   "headers": [
