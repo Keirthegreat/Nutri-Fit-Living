@@ -3,30 +3,20 @@
     {
       "source": "/css/(.*)",
       "headers": [
-        {
-          "key": "Content-Type",
-          "value": "text/css"
-        }
+        { "key": "Content-Type", "value": "text/css" }
       ]
     },
     {
       "source": "/Javascript/(.*)",
       "headers": [
-        {
-          "key": "Content-Type",
-          "value": "application/javascript"
-        }
+        { "key": "Content-Type", "value": "application/javascript" }
       ]
     },
     {
       "source": "/IMG/(.*)",
       "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
       ]
     }
   ]
 }
-
