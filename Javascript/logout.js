@@ -38,8 +38,3 @@ if (navbarContainer) {
 } else {
     console.error('Navbar container not found in the DOM');
 }
-
-
-
-
-
