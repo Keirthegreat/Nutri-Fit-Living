@@ -21,7 +21,7 @@ const observer = new MutationObserver((mutations) => {
                     });
 
                     console.log('Redirecting to login.html');
-                    window.location.href = 'login.html';
+                    window.location.href = 'index.html';
                 });
 
                 // Stop observing once the button is found
