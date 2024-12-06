@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
             // Redirect to login page
             console.log('Redirecting to login.html');
-            window.location.href = 'login.html';
+            window.location.href = 'index.html';
         });
     } else {
         console.error('Logout button not found in the DOM.');
