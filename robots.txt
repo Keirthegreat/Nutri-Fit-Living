@@ -1,5 +1,7 @@
 User-agent: *
 Allow: /
 Allow: /favicon.ico
+Allow: /index.html
 Sitemap: https://www.nutrifitliving.website/sitemap.xml
+
 
