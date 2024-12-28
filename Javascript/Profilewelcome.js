@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", async function() {
     const userId = "your_user_id_here";  // Replace with actual user ID or method to get user ID
-    const response = await fetch(`https://nutrifit-backend.onrender.com/get_profile.php?user_id=${userId}`);
+    const response = await fetch(`https://nutrifit-backend.onrender.com/fetchUserFitnessProfile.php?user_id=${userId}`);
     if (response.ok) {
         const data = await response.json();
         const welcomeMessage = document.getElementById("welcomeMessage");
