@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", async function() {
-    // Retrieve user ID from local storage
     const userId = localStorage.getItem('user_id');  // Get the user ID from local storage
 
     if (!userId) {
@@ -11,6 +10,7 @@ document.addEventListener("DOMContentLoaded", async function() {
     const response = await fetch(`https://nutrifit-backend.onrender.com/fetchUserFitnessProfile.php?user_id=${userId}`);
     if (response.ok) {
         const result = await response.json();
+        console.log(result);  // Log the entire response to see its structure
         const data = result.data;  // Access the data object within the result
         const welcomeMessage = document.getElementById("welcomeMessage");
         if (data && welcomeMessage) {
