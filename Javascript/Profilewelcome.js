@@ -15,9 +15,8 @@ document.addEventListener("DOMContentLoaded", async function() {
         const data = result.data;  // Access the data object within the result
         const welcomeMessage = document.getElementById("welcomeMessage");
         if (data && welcomeMessage) {
-            const { full_name, age, height_cm, weight_kg, target_weight, ideal_bmi } = data;
+            const { full_name, height_cm, weight_kg, target_weight, ideal_bmi } = data;
             console.log("Full Name:", full_name); // Log each piece of data for debugging
-            console.log("Age:", age);
             console.log("Height:", height_cm);
             console.log("Weight:", weight_kg);
             console.log("Target Weight:", target_weight);
@@ -25,7 +24,6 @@ document.addEventListener("DOMContentLoaded", async function() {
             welcomeMessage.innerHTML = `
                 Hi ${full_name}! I'm Nutribot, your fitness assistant.
                 Here’s your profile fitness data summary:
-                <br> Age: ${age}
                 <br> Height: ${height_cm} cm
                 <br> Weight: ${weight_kg} kg
                 <br> Target Weight: ${target_weight} kg
