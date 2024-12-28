@@ -1,8 +1,9 @@
 document.addEventListener("DOMContentLoaded", async function() {
-    const userId = localStorage.getItem('user_id');  // Get the user ID from local storage
+    // Retrieve user ID from session storage
+    const userId = sessionStorage.getItem('user_id');  // Get the user ID from session storage
 
     if (!userId) {
-        console.error("User ID not found in local storage");
+        console.error("User ID not found in session storage");
         return;
     }
 
