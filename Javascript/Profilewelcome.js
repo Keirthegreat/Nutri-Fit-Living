@@ -1,8 +1,17 @@
 document.addEventListener("DOMContentLoaded", async function() {
-    const userId = "your_user_id_here";  // Replace with actual user ID or method to get user ID
+    // Retrieve user ID from local storage
+    const userId = localStorage.getItem('user_id');  // Get the user ID from local storage
+
+    if (!userId) {
+        console.error("User ID not found in local storage");
+        return;
+    }
+
+    // Fetch user profile data using the retrieved user ID
     const response = await fetch(`https://nutrifit-backend.onrender.com/fetchUserFitnessProfile.php?user_id=${userId}`);
     if (response.ok) {
-        const data = await response.json();
+        const result = await response.json();
+        const data = result.data;  // Access the data object within the result
         const welcomeMessage = document.getElementById("welcomeMessage");
         if (data && welcomeMessage) {
             const { full_name, age, height, weight, target_weight, ideal_bmi } = data;
