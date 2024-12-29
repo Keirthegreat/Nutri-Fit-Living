@@ -543,3 +543,105 @@ body {
   }
 }
 
+
+
+
+
+
+/* iPhone 5/SE (320px to 375px) */
+@media (min-width: 320px) and (max-width: 375px) {
+  .container {
+    flex-direction: column;
+    height: auto;
+  }
+  .left, .right {
+    padding: 18px;
+    width: 100%;
+  }
+  .left h1 {
+    font-size: 1.6rem;
+  }
+  .left p {
+    font-size: 0.95rem;
+  }
+  .form-box {
+    width: 100%;
+  }
+  .form-box h2 {
+    font-size: 1.4rem;
+  }
+  .input-box input {
+    padding: 9px 0;
+    font-size: 0.9rem;
+  }
+  .btn {
+    padding: 10px 0;
+    font-size: 0.9rem;
+  }
+}
+
+/* iPhone 6/7/8 Plus (375px to 414px) */
+@media (min-width: 376px) and (max-width: 414px) {
+  .container {
+    flex-direction: column;
+    height: auto;
+  }
+  .left, .right {
+    padding: 18px;
+    width: 100%;
+  }
+  .left h1 {
+    font-size: 1.6rem;
+  }
+  .left p {
+    font-size: 0.95rem;
+  }
+  .form-box {
+    width: 100%;
+  }
+  .form-box h2 {
+    font-size: 1.4rem;
+  }
+  .input-box input {
+    padding: 9px 0;
+    font-size: 0.9rem;
+  }
+  .btn {
+    padding: 10px 0;
+    font-size: 0.9rem;
+  }
+}
+
+/* iPhone X and later (375px to 428px) */
+@media (min-width: 414px) and (max-width: 428px) {
+  .container {
+    flex-direction: column;
+    height: auto;
+  }
+  .left, .right {
+    padding: 18px;
+    width: 100%;
+  }
+  .left h1 {
+    font-size: 1.6rem;
+  }
+  .left p {
+    font-size: 0.95rem;
+  }
+  .form-box {
+    width: 100%;
+  }
+  .form-box h2 {
+    font-size: 1.4rem;
+  }
+  .input-box input {
+    padding: 9px 0;
+    font-size: 0.9rem;
+  }
+  .btn {
+    padding: 10px 0;
+    font-size: 0.9rem;
+  }
+}
+
+
