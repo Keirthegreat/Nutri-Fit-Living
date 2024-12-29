@@ -426,41 +426,142 @@ body {
       margin-bottom: 20px; /* Additional margin for spacing */
     }
 
-    /* Mobile Responsiveness */
-    @media (max-width: 768px) {
-      .container {
-        flex-direction: column;
-        height: auto; /* Set to auto for flexibility */
-      }
+    /* Mobile Responsiveness - Base Mobile Styles */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+    padding: 15px;
+    margin: 0;
+  }
 
-      .left, .right {
-        padding: 20px;
-        width: 100%;
-      }
+  .left, .right {
+    padding: 20px;
+    width: 100%;
+  }
 
-      .left h1 {
-        font-size: 1.8rem;
-      }
+  .left h1 {
+    font-size: 1.8rem;
+    line-height: 1.2;
+    margin-bottom: 15px;
+  }
 
-      .left p {
-        font-size: 1rem;
-      }
+  .left p {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
 
-      .form-box {
-        width: 100%; /* Ensure full width on mobile */
-      }
+  .form-box {
+    width: 100%;
+    padding: 0 15px;
+  }
 
-      .form-box h2 {
-        font-size: 1.5rem;
-      }
+  .form-box h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
 
-      .input-box input {
-        padding: 10px 0; /* Ensure proper padding */
-        font-size: 0.9rem;
-      }
+  .input-box input {
+    padding: 12px;
+    font-size: 0.9rem;
+    width: 100%;
+    border-radius: 8px;
+  }
 
-      .btn {
-        padding: 10px 0;
-        font-size: 0.9rem;
-      }
-    }
+  .btn {
+    padding: 12px 0;
+    font-size: 0.9rem;
+    width: 100%;
+    border-radius: 25px;
+  }
+}
+
+/* Small Phones (iPhone SE, Galaxy S5, etc.) */
+@media (max-width: 320px) {
+  .container {
+    padding: 10px;
+  }
+
+  .left, .right {
+    padding: 15px;
+  }
+
+  .left h1 {
+    font-size: 1.5rem;
+  }
+
+  .left p {
+    font-size: 0.9rem;
+  }
+
+  .form-box h2 {
+    font-size: 1.3rem;
+  }
+
+  .input-box input {
+    padding: 10px;
+    font-size: 0.85rem;
+  }
+
+  .btn {
+    padding: 10px 0;
+    font-size: 0.85rem;
+  }
+}
+
+/* Medium Phones (iPhone X, Pixel, etc.) */
+@media (min-width: 321px) and (max-width: 375px) {
+  .container {
+    padding: 12px;
+  }
+
+  .left h1 {
+    font-size: 1.6rem;
+  }
+
+  .input-box input {
+    padding: 11px;
+  }
+}
+
+/* Larger Phones (iPhone Plus, Galaxy Note, etc.) */
+@media (min-width: 376px) and (max-width: 428px) {
+  .container {
+    padding: 15px;
+  }
+
+  .left h1 {
+    font-size: 1.7rem;
+  }
+
+  .input-box input {
+    padding: 12px;
+  }
+}
+
+/* Landscape Mode */
+@media (max-width: 768px) and (orientation: landscape) {
+  .container {
+    min-height: 100%;
+    padding: 10px;
+  }
+
+  .left, .right {
+    padding: 15px 20px;
+  }
+
+  .form-box {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+}
+
+/* Fix for Notched Phones */
+@supports (padding: max(0px)) {
+  .container {
+    padding-left: max(15px, env(safe-area-inset-left));
+    padding-right: max(15px, env(safe-area-inset-right));
+    padding-top: max(15px, env(safe-area-inset-top));
+  }
+}
