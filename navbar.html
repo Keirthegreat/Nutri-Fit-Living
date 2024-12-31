@@ -24,7 +24,7 @@ body {
 }
 
 header {
-    background-color: #4CAF50;
+    background-color: #2ecc40;
     padding: 1.5rem 0;
     position: sticky;
     top: 0;
@@ -51,10 +51,39 @@ nav {
 }
 
 .logo {
-    font-size: 1.5rem; /* Keep the font size */
-    font-weight: bold; /* Keep the bold font */
-    color: white; /* Text color */
-    position: relative; /* Default for desktop */
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    margin-right: 2rem;
+    background-color: #2ecc40;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo img {
+    height: 100px;  /* Adjusted height */
+    width: auto;  /* Automatically adjust width to maintain aspect ratio */
+    transition: all 0.3s ease;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .logo img {
+        height: 55px;
+        width: 140px;  /* Ensures image maintains aspect ratio */
+        
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        margin-right: 1rem;
+    }
+    .logo img {
+        height: 55px;
+        width: 140px;  /* Adjust width for a more horizontal appearance */
+        
+    }
 }
 
 /* Center the logo only for mobile view */
@@ -468,7 +497,7 @@ nav ul li a i.nav-icon {
 <!-- Navigation Bar -->     
 <header>         
     <nav>
-        <div class="logo">NutriFit Living</div>
+        <div class="logo"> <img src="IMG/Logo.svg" alt="NutriFit Living Logo"> </div>
         <div class="menu-toggle" aria-label="Toggle menu">
             <!-- Replace Font Awesome with spans for the animation -->
             <span></span>
