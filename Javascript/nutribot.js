@@ -3,6 +3,8 @@ function sendMessage() {
     const chatArea = document.getElementById('chatArea');
     const botAvatarUrl = chatArea.getAttribute('data-bot-avatar');
 
+    console.log("botAvatarUrl:", botAvatarUrl);  // Log the URL to debug
+
     if (userInput.value.trim() !== "") {
         const userMessage = document.createElement('div');
         userMessage.className = 'user-message';
@@ -36,11 +38,10 @@ function sendMessage() {
         .then(data => {
             chatArea.removeChild(thinkingIndicator);
 
-          const botMessage = document.createElement('div');
-botMessage.className = 'bot-message';
-botMessage.innerHTML = `<img src="${botAvatarUrl}" alt="Nutribot Avatar" /><div class="message">${data.response || "I'm here to help you with that!"}</div>`;
-chatArea.appendChild(botMessage);
-
+            const botMessage = document.createElement('div');
+            botMessage.className = 'bot-message';
+            botMessage.innerHTML = `<img src="${botAvatarUrl}" alt="Nutribot Avatar" /><div class="message">${data.response || "I'm here to help you with that!"}</div>`;
+            chatArea.appendChild(botMessage);
 
             chatArea.scrollTop = chatArea.scrollHeight;
         })
