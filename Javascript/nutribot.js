@@ -38,7 +38,7 @@ function sendMessage() {
 
             const botMessage = document.createElement('div');
             botMessage.className = 'bot-message';
-            botMessage.innerHTML = `<img src="${botAvatarUrl}" alt="Nutribot Avatar" /><div class="message">${data.response || "I'm here to help you with that!"}</div>`;
+            botMessage.innerHTML = `<img src="${https://i.postimg.cc/prmcZkmT/bot.png}" alt="Nutribot Avatar" /><div class="message">${data.response || "I'm here to help you with that!"}</div>`;
             chatArea.appendChild(botMessage);
 
             chatArea.scrollTop = chatArea.scrollHeight;
